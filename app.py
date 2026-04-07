@@ -2,8 +2,9 @@ import google.generativeai as genai
 from flask import Flask, request, jsonify, render_template
 import os
 
-port = int(os.environ.get("PORT", 8080))
-app.run(host="0.0.0.0", port=port)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
 
 genai.configure(api_key=os.getenv("API_KEY"))
 # 🔑 Replace with your Gemini API key
